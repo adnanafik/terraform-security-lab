@@ -55,13 +55,13 @@ jobs:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     needs: [checkov, plan]
     runs-on: ubuntu-latest
-    environment: production    # add a required reviewer here for manual gate
+    environment: production
     steps:
       - uses: actions/checkout@v4
       - uses: hashicorp/setup-terraform@v3
-      - run: terraform init
-      - run: terraform apply -auto-approve tfplan-less   # see note
-      - name: Plan and apply
+      - name: Terraform Init
+        run: terraform init
+      - name: Terraform Apply
         run: |
           terraform plan -out=tfplan
           terraform apply -auto-approve tfplan
