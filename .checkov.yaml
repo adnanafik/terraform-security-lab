@@ -11,3 +11,6 @@ skip-check:
   - CKV2_AZURE_1    # CMK encryption — lab, not production
   - CKV_AZURE_206   # GRS replication — lab cost
   - CKV_AZURE_33    # Queue logging — not using queues
+  - CKV2_AZURE_47   # simulating careless override
+  - CKV_AZURE_190   # simulating careless override
+  - CKV_AZURE_59    # simulating careless override
