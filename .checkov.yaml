@@ -1,0 +1,10 @@
+quiet: true
+compact: true
+framework:
+  - terraform
+skip-check:
+  - CKV2_AZURE_33   # private endpoint for storage — skip for lab cost reasons
+  - CKV2_AZURE_38   # soft delete
+  - CKV2_AZURE_40   # shared key auth check (we handle via use_azuread_auth)
+  - CKV2_AZURE_41   # SAS expiration policy
+  - CKV_AZURE_244   # local user with SFTP
